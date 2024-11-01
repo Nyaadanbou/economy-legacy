@@ -10,6 +10,8 @@ version = "1.0.0-SNAPSHOT"
 dependencies {
     // server
     compileOnly(libs.server.paper)
+
+    compileOnly(local.economy.api)
 }
 
 publishing {

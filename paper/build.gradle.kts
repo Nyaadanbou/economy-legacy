@@ -3,6 +3,7 @@ import net.minecrell.pluginyml.paper.PaperPluginDescription
 plugins {
     id("economy-conventions.commons")
     id("nyaadanbou-conventions.repositories")
+    id("nyaadanbou-conventions.copy-jar")
     alias(libs.plugins.pluginyml.paper)
 }
 
@@ -13,9 +14,16 @@ project.ext.set("name", "GemsEconomy")
 
 dependencies {
     compileOnly(local.paper)
+    compileOnly(local.economy.api)
 
     implementation(project(":common"))
-    implementation(local.economy.api)
+}
+
+tasks {
+    copyJar {
+        environment = "paper"
+        jarFileName = "economy-legacy-${project.version}.jar"
+    }
 }
 
 paper {
@@ -28,7 +36,7 @@ paper {
     serverDependencies {
         register("Economy") {
             required = true
-            load = PaperPluginDescription.RelativeLoadOrder.OMIT
+            load = PaperPluginDescription.RelativeLoadOrder.BEFORE
         }
     }
 }

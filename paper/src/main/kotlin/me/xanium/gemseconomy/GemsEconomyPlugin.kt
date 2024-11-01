@@ -1,20 +1,20 @@
 package me.xanium.gemseconomy
 
 import cc.mewcraft.economy.api.EconomyProvider
+import me.xanium.gemseconomy.account.AccountManager
+import me.xanium.gemseconomy.currency.CurrencyManager
 import org.bukkit.plugin.java.JavaPlugin
 
 class GemsEconomyPlugin : JavaPlugin() {
-    private var economy: DummyGemsEconomy? = null
-
     override fun onEnable() {
         // Plugin startup logic
-        economy = DummyGemsEconomy(EconomyProvider.get())
-        GemsEconomyProvider.register(economy!!)
+        val economy = EconomyProvider.get()
+        GemsEconomy.getInstance().accountManager = AccountManager(economy)
+        GemsEconomy.getInstance().currencyManager = CurrencyManager(economy)
     }
 
     override fun onDisable() {
         // Plugin shutdown logic
-        economy = null
-        GemsEconomyProvider.unregister()
+        GemsEconomy.getInstance().unregister()
     }
 }
