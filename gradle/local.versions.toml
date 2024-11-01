@@ -40,6 +40,8 @@ koin-test-junit5 = { group = "io.insert-koin", name = "koin-test-junit5", versio
 paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
 velocity = { group = "com.velocitypowered", name = "velocity-api", version.ref = "velocity" }
 
+economy-api = { group = "cc.mewcraft.economy", name = "economy-api", version = "2.0.1" }
+
 [plugins]
 
 pluginyml-paper = { id = "net.minecrell.plugin-yml.paper", version = "0.6.0" }

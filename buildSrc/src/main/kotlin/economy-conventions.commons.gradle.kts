@@ -4,7 +4,7 @@ plugins {
     id("com.gradleup.shadow")
 }
 
-group = "cc.mewcraft.example"
+group = "me.xanium.gemseconomy"
 
 // Expose version catalog
 val local = the<org.gradle.accessors.dm.LibrariesForLocal>()

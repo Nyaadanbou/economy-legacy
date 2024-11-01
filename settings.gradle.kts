@@ -26,6 +26,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "nyaadanbou-plugin-template"
+rootProject.name = "economy-legacy"
 
-include(":api")
+include("common")
+include("paper")
