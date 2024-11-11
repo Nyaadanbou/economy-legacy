@@ -73,7 +73,7 @@ class Currency(
     }
 
     fun setSymbol(symbol: String?) {
-        delegate.symbol = symbol
+        delegate.setSymbol(symbol)
     }
 
     fun isDefaultCurrency(): Boolean {
