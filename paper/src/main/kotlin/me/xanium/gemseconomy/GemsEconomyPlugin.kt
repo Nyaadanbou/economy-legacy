@@ -1,3 +1,7 @@
+@file:Suppress(
+    "unused"
+)
+
 package me.xanium.gemseconomy
 
 import cc.mewcraft.economy.api.EconomyProvider
@@ -7,14 +11,12 @@ import org.bukkit.plugin.java.JavaPlugin
 
 class GemsEconomyPlugin : JavaPlugin() {
     override fun onEnable() {
-        // Plugin startup logic
         val economy = EconomyProvider.get()
         GemsEconomy.getInstance().accountManager = AccountManager(economy)
         GemsEconomy.getInstance().currencyManager = CurrencyManager(economy)
     }
 
     override fun onDisable() {
-        // Plugin shutdown logic
         GemsEconomy.getInstance().unregister()
     }
 }

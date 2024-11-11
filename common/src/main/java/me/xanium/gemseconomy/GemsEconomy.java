@@ -7,26 +7,19 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
+@SuppressWarnings("unused")
 public class GemsEconomy {
     private static final GemsEconomy INSTANCE = new GemsEconomy();
 
     private CurrencyManager currencyManager;
     private AccountManager accountManager;
 
-    @NotNull
-    public static GemsEconomy getInstance() {
-        Objects.requireNonNull(INSTANCE, "GemsEconomy INSTANCE is not initialized yet!");
-        return INSTANCE;
+    public static @NotNull GemsEconomy getInstance() {
+        return Objects.requireNonNull(INSTANCE, "api not initialized yet");
     }
 
     public AccountManager getAccountManager() {
         return accountManager;
-    }
-
-    @ApiStatus.Internal
-    public void setAccountManager(@NotNull AccountManager accountManager) {
-        Objects.requireNonNull(accountManager, "AccountManager cannot be null!");
-        this.accountManager = accountManager;
     }
 
     public CurrencyManager getCurrencyManager() {
@@ -34,8 +27,14 @@ public class GemsEconomy {
     }
 
     @ApiStatus.Internal
+    public void setAccountManager(@NotNull AccountManager accountManager) {
+        Objects.requireNonNull(accountManager, "accountManager");
+        this.accountManager = accountManager;
+    }
+
+    @ApiStatus.Internal
     public void setCurrencyManager(@NotNull CurrencyManager currencyManager) {
-        Objects.requireNonNull(currencyManager, "CurrencyManager cannot be null!");
+        Objects.requireNonNull(currencyManager, "currencyManager");
         this.currencyManager = currencyManager;
     }
 

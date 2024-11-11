@@ -1,14 +1,20 @@
+@file:Suppress(
+    "UnstableApiUsage",
+    "unused",
+)
+
 package me.xanium.gemseconomy.account
 
 import me.xanium.gemseconomy.currency.Currency
 import me.xanium.gemseconomy.data.toCurrency
 import me.xanium.gemseconomy.data.toEconomyCurrency
-import java.util.*
+import java.util.UUID
 import cc.mewcraft.economy.api.Account as EconomyAccount
 
-data class Account(
+class Account(
+    @JvmField
     val delegate: EconomyAccount,
-)  {
+) {
     fun getUuid(): UUID {
         return delegate.uuid
     }
@@ -81,4 +87,7 @@ data class Account(
         delegate.setNickname(nickname)
     }
 
+    override fun toString(): String {
+        return delegate.toString()
+    }
 }

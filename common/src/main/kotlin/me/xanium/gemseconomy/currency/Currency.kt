@@ -1,14 +1,19 @@
+@file:Suppress(
+    "unused",
+)
+
 package me.xanium.gemseconomy.currency
 
 import net.kyori.adventure.text.format.TextColor
-import java.util.*
+import java.util.UUID
 import cc.mewcraft.economy.api.Currency as EconomyCurrency
 
-data class Currency(
+class Currency(
+    @JvmField
     val delegate: EconomyCurrency,
 ) {
     fun getSingular(): String {
-        return delegate.singular
+        return delegate.name
     }
 
     fun getUuid(): UUID {
@@ -107,4 +112,7 @@ data class Currency(
         delegate.update(other.delegate)
     }
 
+    override fun toString(): String {
+        return delegate.toString()
+    }
 }

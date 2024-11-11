@@ -1,10 +1,15 @@
+@file:Suppress(
+    "UnstableApiUsage",
+    "unused",
+)
+
 package me.xanium.gemseconomy.account
 
 import cc.mewcraft.economy.api.Economy
 import me.xanium.gemseconomy.data.toAccount
 import org.bukkit.entity.Player
 import org.jetbrains.annotations.ApiStatus
-import java.util.*
+import java.util.UUID
 
 class AccountManager(
     private val economy: Economy,
