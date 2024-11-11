@@ -1,16 +1,14 @@
 plugins {
-    id("economy-conventions.commons")
     id("nyaadanbou-conventions.repositories")
+    id("economy-conventions.commons")
     `maven-publish`
 }
 
 group = "me.xanium.gemseconomy"
-version = "1.0.0-SNAPSHOT"
+version = "0.0.1"
 
 dependencies {
-    // server
-    compileOnly(libs.server.paper)
-
+    compileOnly(local.paper)
     compileOnly(local.economy.api)
 }
 
@@ -23,7 +21,6 @@ publishing {
             }
         }
     }
-
     publications {
         create<MavenPublication>("maven") {
             from(components["java"])

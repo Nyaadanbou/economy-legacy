@@ -1,22 +1,19 @@
 import net.minecrell.pluginyml.paper.PaperPluginDescription
 
 plugins {
-    id("economy-conventions.commons")
     id("nyaadanbou-conventions.repositories")
     id("nyaadanbou-conventions.copy-jar")
+    id("economy-conventions.commons")
     alias(libs.plugins.pluginyml.paper)
 }
 
 group = "me.xanium.gemseconomy"
 version = "1.0.0-SNAPSHOT"
 
-project.ext.set("name", "GemsEconomy")
-
 dependencies {
+    implementation(project(":common"))
     compileOnly(local.paper)
     compileOnly(local.economy.api)
-
-    implementation(project(":common"))
 }
 
 tasks {
@@ -28,7 +25,7 @@ tasks {
 
 paper {
     main = "me.xanium.gemseconomy.GemsEconomyPlugin"
-    name = project.ext.get("name") as String
+    name = "GemsEconomy"
     version = "${project.version}"
     description = project.description
     apiVersion = "1.19"
