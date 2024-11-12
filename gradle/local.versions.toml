@@ -6,7 +6,7 @@ kotlinx-coroutines-core = "1.9.0"
 kotlinx-atomicfu = "0.26.0"
 paper = "1.21.1-R0.1-SNAPSHOT"
 velocity = "3.3.0-SNAPSHOT"
-economy-api = "2.1.0"
+economy = "2.2.0"
 
 [libraries]
 
@@ -26,4 +26,4 @@ kotlinx-atomicfu = { group = "org.jetbrains.kotlinx", name = "atomicfu", version
 
 paper = { group = "io.papermc.paper", name = "paper-api", version.ref = "paper" }
 velocity = { group = "com.velocitypowered", name = "velocity-api", version.ref = "velocity" }
-economy-api = { group = "cc.mewcraft.economy", name = "economy-api", version.ref = "economy-api" }
+economy-api = { group = "cc.mewcraft.economy", name = "api", version.ref = "economy" }
